@@ -3,7 +3,7 @@
         <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
     </head>
     <body>
-        <a-scene fog="type: linear; color: #2F3F3F; near:1; far:30; density:0.3;">
+        <a-scene fog="type: exponential; color: #2a2a2a; density: 0.15">
             <a-asset>
                 <a-asset-item id="armchair-small" src="./assets/Couch Small.glb"></a-asset-item>
                 <a-asset-item id="armchair-medium" src="./assets/Couch Medium.glb"></a-asset-item>
@@ -12,11 +12,10 @@
                 <a-asset-item id="shrub" src="./assets/Shrub.glb"></a-asset-item>
             </a-asset>
 
-            <a-entity geometry="primitive:sphere; radius:1" position="0 3 6" scale="0.4 0.4 0.4" material="color:#FFAA33; emissive:#FFAA33; emissiveIntensity:100; shader:standard" light="color:#fff; type:ambient"></a-entity>
-
-            <a-entity geometry="primitive:sphere; radius:1" position="-6 3 0" scale="0.4 0.4 0.4"></a-entity>
-            <a-entity geometry="primitive:sphere; radius:1" position="0 3 -6" scale="0.4 0.4 0.4"></a-entity>
-            <a-entity geometry="primitive:sphere; radius:1" position="6 3 0" scale="0.4 0.4 0.4"></a-entity>
+            <a-entity geometry="primitive:sphere; radius:1" position="0 3 6" scale="0.4 0.4 0.4" material="color:#fff; emissive:#01FFCB; emissiveIntensity:100;" light="color:#01FFCB; type:point; intensity:2; distance:8"></a-entity>
+            <a-entity geometry="primitive:sphere; radius:1" position="-6 3 0" scale="0.4 0.4 0.4" material="color:#fff; emissive:#01FFCB; emissiveIntensity:100;" light="color:#01FFCB; type:point; intensity:2; distance:8"></a-entity>
+            <a-entity geometry="primitive:sphere; radius:1" position="0 3 -6" scale="0.4 0.4 0.4" material="color:#fff; emissive:#01FFCB; emissiveIntensity:100;" light="color:#01FFCB; type:point; intensity:2; distance:8"></a-entity>
+            <a-entity geometry="primitive:sphere; radius:1" position="6 3 0" scale="0.4 0.4 0.4" material="color:#fff; emissive:#01FFCB; emissiveIntensity:100;" light="color:#01FFCB; type:point; intensity:2; distance:8"></a-entity>
 
 
             <a-box position="0 0.75 0" rotation="0 45 0" color="#2F4F4F" scale="10 1.5 10"></a-box>
@@ -41,14 +40,31 @@
             <a-entity gltf-model="#armchair-small" position="-7 0 2.5" rotation="0 225 0"></a-entity>
             <a-entity gltf-model="#armchair-small" position="-9.5 0 0" rotation="0 45 0"></a-entity>
 
-            <a-entity gltf-model="#shrub" position="-2.5 0 6.5" rotation="0 45 0" scale="0.5 0.5 0.5"></a-entity>
-            <a-entity gltf-model="#shrub" position="2.5 0 -6.5" rotation="0 45 0" scale="0.5 0.5 0.5"></a-entity>
-            <a-entity gltf-model="#shrub" position="6.5 0 2.5" rotation="0 45 0" scale="0.5 0.5 0.5"></a-entity>
-            <a-entity gltf-model="#shrub" position="-6.5 0 -2.5" rotation="0 45 0" scale="0.5 0.5 0.5"></a-entity>
 
-            <!-- <a-plane position="0 0 -4" rotation="-90 0 0" width="10" height="10" color="#7BC8A4"></a-plane> -->
-            <a-sky color="#000"></a-sky>
-            <a-camera position="0 2.50 15"></a-camera>
+            <!-- Plantes -->
+            <a-entity gltf-model="#shrub" position="-2.5 0 6.5" rotation="0 45 0" scale="0.5 0.5 0.5"></a-entity>
+            <a-box position="-2.5 0 6.5" rotation="0 45 0" scale="1 0.5 1" color="#2F4F4F"></a-box>
+
+            <a-entity gltf-model="#shrub" position="2.5 0 -6.5" rotation="0 45 0" scale="0.5 0.5 0.5"></a-entity>
+            <a-box position="2.5 0 -6.5" rotation="0 45 0" scale="1 0.5 1" color="#2F4F4F"></a-box>
+
+            <a-entity gltf-model="#shrub" position="6.5 0 2.5" rotation="0 45 0" scale="0.5 0.5 0.5"></a-entity>
+            <a-box position="6.5 0 2.5" rotation="0 45 0" scale="1 0.5 1" color="#2F4F4F"></a-box>
+
+            <a-entity gltf-model="#shrub" position="-6.5 0 -2.5" rotation="0 45 0" scale="0.5 0.5 0.5"></a-entity>
+            <a-box position="-6.5 0 -2.5" rotation="0 45 0" scale="1 0.5 1" color="#2F4F4F"></a-box>
+            <!-- Plantes -->
+
+
+            <a-entity
+                light="type: ambient; color: #01FFCB; intensity: 1"
+                position="0 4 -15"
+            ></a-entity>
+
+            <a-plane position="0 -1 -4" rotation="-90 0 0" width="60" height="40" color="#2F3F3F"></a-plane>
+
+            <a-sky color="#2F3F3F"></a-sky>
+            <a-camera position="0 2.50 18"></a-camera>
         </a-scene>
     </body>
 </html>
