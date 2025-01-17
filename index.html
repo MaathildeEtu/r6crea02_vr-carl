@@ -85,11 +85,15 @@
                             y: Math.random() * 20,
                             z: Math.random() * 20 - 10,
                         });
-                        sphere.setAttribute(
-                            "color",
-                            `#${Math.floor(Math.random() * 16777215).toString(16)}`
-                        );
-                        sphere.setAttribute("radius", Math.floor(Math.random() * 1 + 1));
+                        // sphere.setAttribute(
+                        //     "color",
+                        //     `#${Math.floor(Math.random() * 16777215).toString(16)}`
+                        // );
+                        sphere.setAttribute("color", "#01FFCB");
+                        sphere.setAttribute("intensity", "2");
+                        sphere.setAttribute("emissiveIntensity", "100");
+                        // sphere.setAttribute("radius", Math.floor(Math.random() * 1 + 1));
+                        sphere.setAttribute("radius", ".5");
                         sphere.setAttribute("class", "clickable"); 
                         sphere.setAttribute("interactable", "");
                         this.el.appendChild(sphere);
